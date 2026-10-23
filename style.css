@@ -1,0 +1,470 @@
+
+/* =========================================
+   O REINO DAS SOMBRAS
+   Terror • Fantasia • Mistério
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --fundo: #0b0810;
+  --painel: rgba(16, 11, 23, 0.86);
+  --vinho: #681b37;
+  --vinho-claro: #a33b59;
+  --dourado: #c6a66b;
+  --texto: #eee6df;
+  --texto-suave: #b8aebd;
+  --borda: rgba(198, 166, 107, 0.35);
+  --fonte-titulo: 'Cinzel', Georgia, serif;
+  --fonte-texto: 'Crimson Text', Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--fonte-texto);
+  color: var(--texto);
+
+  background-color: var(--fundo);
+  background-image:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(83, 35, 88, 0.35),
+      transparent 60%
+    ),
+    linear-gradient(
+      145deg,
+      #100a17,
+      #09070d 60%,
+      #1b0a17
+    );
+
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 18px;
+}
+
+/* CONTAINER PRINCIPAL */
+
+.aventura {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  min-height: 650px;
+  overflow: hidden;
+
+  padding: 38px;
+  border: 1px solid var(--borda);
+  border-radius: 18px;
+
+  background: var(--painel);
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.55),
+    inset 0 0 60px rgba(92, 30, 72, 0.08);
+
+  backdrop-filter: blur(12px);
+}
+
+/* DETALHE DECORATIVO */
+
+.aventura::before {
+  content: "✦";
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  color: var(--dourado);
+  opacity: 0.75;
+}
+
+.aventura::after {
+  content: "✦";
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  color: var(--dourado);
+  opacity: 0.75;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.subtitulo {
+  color: var(--dourado);
+  font-family: var(--fonte-titulo);
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  line-height: 1.8;
+}
+
+h1,
+h2 {
+  font-family: var(--fonte-titulo);
+  font-weight: 500;
+}
+
+h1 {
+  margin: 18px 0 12px;
+  font-size: clamp(2rem, 6vw, 3.7rem);
+  line-height: 1.2;
+  color: #e8d5b2;
+  text-shadow: 0 0 30px rgba(163, 59, 89, 0.3);
+}
+
+.frase {
+  color: var(--texto-suave);
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* INTRODUÇÃO */
+
+.introducao {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 32px;
+  text-align: center;
+
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(57, 26, 55, 0.36),
+      rgba(10, 8, 15, 0.7)
+    );
+}
+
+.simbolo {
+  color: var(--dourado);
+  font-size: 3.8rem;
+  line-height: 1.2;
+  text-shadow: 0 0 30px rgba(198, 166, 107, 0.45);
+  animation: brilho 4s ease-in-out infinite;
+}
+
+.introducao h2 {
+  color: #e8d5b2;
+  font-size: 1.7rem;
+}
+
+.introducao p,
+.introducao blockquote {
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+.introducao blockquote {
+  margin: 25px 0;
+  padding: 18px;
+  color: #d8b8d1;
+  font-style: italic;
+
+  border-left: 2px solid var(--vinho-claro);
+  background: rgba(104, 27, 55, 0.12);
+}
+
+/* BOTÕES */
+
+button {
+  font-family: var(--fonte-titulo);
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+
+  color: var(--texto);
+  background: linear-gradient(135deg, #54172f, #321327);
+
+  border: 1px solid var(--borda);
+  border-radius: 7px;
+  padding: 14px 22px;
+
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  border-color: var(--dourado);
+
+  background: linear-gradient(135deg, #762641, #47203c);
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--dourado);
+  outline-offset: 4px;
+}
+
+#comecar {
+  margin-top: 18px;
+  min-width: 220px;
+}
+
+/* ÁREA DO JOGO */
+
+#jogo {
+  animation: aparecer 0.6s ease;
+}
+
+.barra-progresso {
+  margin-bottom: 22px;
+}
+
+#progresso {
+  color: var(--dourado);
+  font-family: var(--fonte-titulo);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.trilho-progresso {
+  width: 100%;
+  height: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#barra-preenchida {
+  width: 6.67%;
+  height: 100%;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    90deg,
+    var(--vinho),
+    var(--dourado)
+  );
+
+  transition: width 0.4s ease;
+}
+
+/* CENAS E FUNDOS */
+
+.cena {
+  --imagem-cena: none;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  min-height: 350px;
+  padding: 32px;
+
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+
+  background-color: #15101c;
+  background-image:
+    linear-gradient(
+      rgba(8, 6, 13, 0.78),
+      rgba(8, 6, 13, 0.91)
+    ),
+    var(--imagem-cena);
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  box-shadow: inset 0 0 70px rgba(0, 0, 0, 0.35);
+
+  transition: background-image 0.4s ease;
+}
+
+.local {
+  color: var(--dourado);
+  font-family: var(--fonte-titulo);
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+#titulo-fase {
+  margin: 18px 0;
+  color: #e8d5b2;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+}
+
+.historia {
+  font-size: 1.25rem;
+  line-height: 1.85;
+  white-space: pre-line;
+}
+
+.historia p {
+  margin: 0 0 18px;
+}
+
+.pergunta {
+  margin-top: 28px;
+  color: #d9bfd7;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* ESCOLHAS */
+
+.escolhas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.escolhas button {
+  width: 100%;
+  min-height: 64px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* CONTROLES */
+
+.controles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+#voltar {
+  background: rgba(30, 23, 38, 0.85);
+}
+
+#reiniciar {
+  background: rgba(62, 21, 43, 0.85);
+}
+
+/* RODAPÉ */
+
+.rodape {
+  margin-top: 35px;
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.rodape p:first-child {
+  color: var(--dourado);
+}
+
+/* ANIMAÇÕES */
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes brilho {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+  body {
+    padding: 14px 10px;
+    align-items: flex-start;
+  }
+
+  .aventura {
+    min-height: auto;
+    padding: 24px 16px;
+    border-radius: 12px;
+  }
+
+  .subtitulo {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+  }
+
+  .introducao {
+    padding: 22px 16px;
+  }
+
+  .introducao p,
+  .introducao blockquote {
+    font-size: 1.1rem;
+  }
+
+  .cena {
+    min-height: 320px;
+    padding: 22px 17px;
+  }
+
+  .escolhas {
+    grid-template-columns: 1fr;
+  }
+
+  .escolhas button {
+    min-height: 56px;
+  }
+
+  .controles {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controles button {
+    width: 100%;
+  }
+
+  .rodape {
+    font-size: 0.85rem;
+  }
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
