@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#100b18">
+  <meta name="description" content="O Reino das Sombras: uma aventura interativa de terror e fantasia.">
+
+  <title>O Reino das Sombras</title>
+
+  <link rel="stylesheet" href="estilo.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="aventura">
+
+    <header class="cabecalho">
+      <p class="subtitulo">UMA AVENTURA DE TERROR E FANTASIA</p>
+      <h1>O Reino das Sombras</h1>
+      <p class="frase">Algumas portas jamais deveriam ser abertas...</p>
+    </header>
+
+    <section id="introducao" class="introducao">
+      <div class="simbolo" aria-hidden="true">☾</div>
+
+      <h2>Você foi escolhida.</h2>
+
+      <p>
+        Há séculos, um reino desapareceu dos mapas.
+        Dizem que, quando a lua fica vermelha,
+        seus portões voltam a se abrir.
+      </p>
+
+      <p>
+        Nesta noite, uma carta misteriosa chegou à sua porta.
+        O papel está manchado de tinta escura e contém apenas
+        uma frase:
+      </p>
+
+      <blockquote>
+        "Encontre o coração do reino antes que ele encontre você."
+      </blockquote>
+
+      <p>Você tem coragem de descobrir a verdade?</p>
+
+      <button id="comecar" type="button">
+        Entrar no reino
+      </button>
+    </section>
+
+    <section id="jogo" hidden aria-live="polite">
+
+      <div class="barra-progresso">
+        <p id="progresso">Fase 1 de 15</p>
+
+        <div
+          class="trilho-progresso"
+          role="progressbar"
+          aria-label="Progresso da aventura"
+          aria-valuemin="1"
+          aria-valuemax="15"
+          aria-valuenow="1"
+          id="barra"
+        >
+          <div id="barra-preenchida"></div>
+        </div>
+      </div>
+
+      <div class="cena">
+        <p id="local" class="local">O início</p>
+
+        <h2 id="titulo-fase">O chamado</h2>
+
+        <div id="historia" class="historia">
+          Sua aventura começa aqui...
+        </div>
+
+        <p id="pergunta" class="pergunta">
+          O que você deseja fazer?
+        </p>
+
+        <div id="escolhas" class="escolhas"></div>
+      </div>
+
+      <nav class="controles" aria-label="Controles da aventura">
+        <button id="voltar" type="button" hidden>
+          ← Voltar
+        </button>
+
+        <button id="reiniciar" type="button" hidden>
+          ↻ Recomeçar aventura
+        </button>
+      </nav>
+
+    </section>
+
+    <footer class="rodape">
+      <p>✦ Cada escolha revela um novo destino ✦</p>
+      <p>O Reino das Sombras · A sua história, as suas decisões.</p>
+    </footer>
+
+  </main>
+</body>
+</html>
